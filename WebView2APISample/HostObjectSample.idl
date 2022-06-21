@@ -1,0 +1,40 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[uuid(0a7a4655-5660-47d0-8a37-98ae21399e57), version(0.1)]
+library HostObjectSampleLibrary
+{
+    //! [AddHostObjectInterface]
+    [uuid(3a14c9c0-bc3e-453f-a314-4ce4a0ec81d8), object, local]
+    interface IHostObjectSample : IUnknown
+    {
+        // Demonstrate basic method call with some parameters and a return value.
+        HRESULT MethodWithParametersAndReturnValue([in] BSTR stringParameter, [in] INT integerParameter, [out, retval] BSTR* stringResult);
+
+        // Demonstrate getting and setting a property.
+        [propget] HRESULT Property([out, retval] BSTR* stringResult);
+        [propput] HRESULT Property([in] BSTR stringValue);
+
+        [propget] HRESULT IndexedProperty(INT index, [out, retval] BSTR * stringResult);
+        [propput] HRESULT IndexedProperty(INT index, [in] BSTR stringValue);
+
+        // Demonstrate native calling back into JavaScript.
+        HRESULT CallCallbackAsynchronously([in] IDispatch* callbackParameter);
+
+        // Demonstrate a property which uses Date types
+        [propget] HRESULT DateProperty([out, retval] DATE * dateResult);
+        [propput] HRESULT DateProperty([in] DATE dateValue);
+
+        // Creates a date object on the native side and sets the DateProperty to it.
+        HRESULT CreateNativeDate();
+
+    };
+    //! [AddHostObjectInterface]
+
+    [uuid(637abc45-11f7-4dde-84b4-317d62a638d3)]
+    coclass HostObjectSample
+    {
+        [default] interface IHostObjectSample;
+        interface IDispatch;
+    };
+}

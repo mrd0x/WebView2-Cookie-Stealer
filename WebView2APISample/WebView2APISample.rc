@@ -1,0 +1,422 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_WEBVIEW2APISAMPLE   ICON                    "WebView2APISample.ico"
+IDI_WEBVIEW2APISAMPLE_INPRIVATE ICON            "WebView2APISample.ico"
+IDI_SMALL               ICON                    "WebView2APISample.ico"
+
+IDI_WEBVIEW2_BACKGROUND BITMAP                   "AppBackground.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_WEBVIEW2APISAMPLE MENU
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Save Screenshot",                             IDM_SAVE_SCREENSHOT
+        POPUP "Print to PDF"
+        BEGIN
+            MENUITEM "Portrait",                                IDM_PRINT_TO_PDF_PORTRAIT
+            MENUITEM "Landscape",                               IDM_PRINT_TO_PDF_LANDSCAPE
+        END
+        MENUITEM "Get Document Title",                          IDM_GET_DOCUMENT_TITLE
+        MENUITEM "Get Browser Version After Creation",          IDM_GET_BROWSER_VERSION_AFTER_CREATION
+        MENUITEM "Get Browser Version Before Creation",         IDM_GET_BROWSER_VERSION_BEFORE_CREATION
+        MENUITEM "Get User Data Folder",                        IDM_GET_USER_DATA_FOLDER
+        MENUITEM "Update WebView2 Runtime",                     IDM_UPDATE_RUNTIME
+        MENUITEM "E&xit",                                       IDM_EXIT
+    END
+    POPUP ""
+    BEGIN
+        MENUITEM "Inject Script",               IDM_INJECT_SCRIPT
+        MENUITEM "Inject Script Into IFrame",   IDM_INJECT_SCRIPT_FRAME
+        MENUITEM "Add Initialize Script",       ID_ADD_INITIALIZE_SCRIPT
+        MENUITEM "Remove Initialize Script",    ID_REMOVE_INITIALIZE_SCRIPT
+        MENUITEM SEPARATOR
+        MENUITEM "Post Message String",         IDM_POST_WEB_MESSAGE_STRING
+        MENUITEM "Post Message JSON",           IDM_POST_WEB_MESSAGE_JSON
+        MENUITEM "Post Message String IFrame",  IDM_POST_WEB_MESSAGE_STRING_FRAME
+        MENUITEM "Post Message JSON IFrame",    IDM_POST_WEB_MESSAGE_JSON_FRAME
+        MENUITEM SEPARATOR
+        MENUITEM "Subscribe to CDP event",      IDM_SUBSCRIBE_TO_CDP_EVENT
+        MENUITEM "Call CDP method",             IDM_CALL_CDP_METHOD
+        MENUITEM "Call CDP method For Session", IDM_CALL_CDP_METHOD_FOR_SESSION
+        MENUITEM "Collect Heap Usage Via CDP",  IDM_COLLECT_HEAP_MEMORY_VIA_CDP
+        MENUITEM SEPARATOR
+        MENUITEM "Add COM object",              IDM_ADD_HOST_OBJECT
+        MENUITEM SEPARATOR
+        MENUITEM "Inject Site Embedding IFrame", IDM_INJECT_SITE_EMBEDDING_IFRAME
+        MENUITEM SEPARATOR
+        MENUITEM "Open DevTools Window",        IDM_OPEN_DEVTOOLS_WINDOW
+        MENUITEM "Open Task Manager Window",    IDM_OPEN_TASK_MANAGER_WINDOW
+    END
+    POPUP ""
+    BEGIN
+        MENUITEM "Set WebView Language",                       IDM_SET_LANGUAGE
+        MENUITEM "Toggle AAD SSO enabled",                     IDM_TOGGLE_AAD_SSO
+        MENUITEM "Toggle exclusive user data folder access",   IDM_TOGGLE_EXCLUSIVE_USER_DATA_FOLDER_ACCESS
+        MENUITEM "Close WebView",                              IDM_CLOSE_WEBVIEW
+        MENUITEM "Close WebView and Delete User Data Folder", IDM_CLOSE_WEBVIEW_CLEANUP
+        MENUITEM SEPARATOR
+        POPUP "WebView Creation Mode"
+        BEGIN
+            MENUITEM "Windowed",                        IDM_CREATION_MODE_WINDOWED
+            MENUITEM "Visual - DComp",                  IDM_CREATION_MODE_VISUAL_DCOMP
+            MENUITEM "Target - DComp",                  IDM_CREATION_MODE_TARGET_DCOMP
+#ifdef USE_WEBVIEW2_WIN10
+            MENUITEM "Visual - WinComp",                IDM_CREATION_MODE_VISUAL_WINCOMP
+#endif
+        END
+        MENUITEM "Create WebView"                             IDM_REINIT
+        MENUITEM "Create New Window With Option"    IDM_CREATE_WITH_OPTION
+        MENUITEM "Create New Window",           IDM_NEW_WINDOW
+        MENUITEM "Create New Thread",           IDM_NEW_THREAD
+        MENUITEM "Toggle TopMost", IDM_TOGGLE_TOPMOST_WINDOW
+    END
+    POPUP ""
+    BEGIN
+        MENUITEM "Browser Process Info",        IDM_PROCESS_INFO
+        MENUITEM "Crash Browser Process",       IDM_CRASH_PROCESS
+        MENUITEM "Crash Render Process",        IDM_CRASH_RENDER_PROCESS
+        MENUITEM "Show Performance Info",       IDM_PERFORMANCE_INFO
+    END
+    POPUP ""
+    BEGIN
+        MENUITEM "Blocked Domains",             ID_BLOCKEDSITES
+        MENUITEM "Set User Agent",              ID_SETTINGS_SETUSERAGENT
+        MENUITEM "Toggle Allow External Drop",    ID_TOGGLE_ALLOW_EXTERNAL_DROP
+        MENUITEM "Toggle Block Images",         ID_SETTINGS_BLOCKALLIMAGES
+        MENUITEM "Toggle Browser Accelerator Keys Enabled", ID_SETTINGS_BROWSER_ACCELERATOR_KEYS_ENABLED
+        MENUITEM "Toggle Built-in Error Page Enabled", ID_SETTINGS_BUILTIN_ERROR_PAGE_ENABLED
+        MENUITEM "Toggle Client Certificate Requested", ID_TOGGLE_CLIENT_CERTIFICATE_REQUESTED
+        MENUITEM "Toggle Context Menus Enabled", ID_SETTINGS_CONTEXT_MENUS_ENABLED
+        MENUITEM "Toggle Custom Context Menu", ID_TOGGLE_CUSTOM_CONTEXT_MENU
+        MENUITEM "Toggle Favicon Changed Listener", ID_SETTINGS_TOGGLE_POST_FAVICON_CHANGED
+        MENUITEM "Toggle Custom Status Bar",    ID_SETTINGS_TOGGLE_POST_STATUS_BAR_ACTIVITY
+        MENUITEM "Toggle Default Script Dialogs", IDM_TOGGLE_DEFAULT_SCRIPT_DIALOGS
+        MENUITEM "Toggle DevTools Enabled",     ID_SETTINGS_DEV_TOOLS_ENABLED
+        MENUITEM "Toggle General Autofill",     ID_SETTINGS_GENERAL_AUTOFILL_ENABLED
+        MENUITEM "Toggle Hide PDF Toolbar Items", ID_SETTINGS_TOGGLE_HIDE_PDF_TOOLBAR_ITEMS
+        MENUITEM "Toggle Host Objects Allowed", ID_SETTINGS_HOST_OBJECTS_ALLOWED
+        MENUITEM "Toggle JavaScript",           IDM_TOGGLE_JAVASCRIPT
+        MENUITEM "Toggle Password Autosave",    ID_SETTINGS_PASSWORD_AUTOSAVE_ENABLED
+        MENUITEM "Toggle Pinch Zoom Enabled",   ID_SETTINGS_PINCH_ZOOM_ENABLED
+        MENUITEM "Toggle Replace Images",       ID_SETTINGS_REPLACEALLIMAGES
+        POPUP "Server Certificate Error"
+        BEGIN
+            MENUITEM "Toggle Custom Server Certificate Support", ID_TOGGLE_CUSTOM_SERVER_CERTIFICATE_SUPPORT 
+            MENUITEM "Clear Server Certificate Error Actions", ID_CLEAR_SERVER_CERTIFICATE_ERROR_ACTIONS
+        END
+        MENUITEM "Toggle Status Bar Enabled",   ID_SETTINGS_STATUS_BAR_ENABLED
+        MENUITEM "Toggle Swipe navigation Enabled",   ID_SETTINGS_SWIPE_NAVIGATION_ENABLED
+        MENUITEM "Toggle Web Messaging",        IDM_TOGGLE_WEB_MESSAGING
+        MENUITEM "Toggle Zoom Control Enabled",   ID_SETTINGS_ZOOM_ENABLED
+    END
+    POPUP ""
+    BEGIN
+        MENUITEM "Toggle Visibility",           IDM_TOGGLE_VISIBILITY
+        MENUITEM "Suspend",                     IDM_SUSPEND
+        MENUITEM "Resume",                      IDM_RESUME
+        MENUITEM "Toggle memory usage target level", IDM_TOGGLE_MEMORY_USAGE_TARGET_LEVEL
+        POPUP "WebView Area"
+        BEGIN
+            MENUITEM "Get WebView Bounds",      IDM_GET_WEBVIEW_BOUNDS
+            MENUITEM "25%",                     IDM_SIZE_25
+            MENUITEM "50%",                     IDM_SIZE_50
+            MENUITEM "75%",                     IDM_SIZE_75
+            MENUITEM "100%",                    IDM_SIZE_100
+        END
+        POPUP "WebView Background Color"
+        BEGIN
+            MENUITEM "White"                   IDM_BACKGROUNDCOLOR_WHITE
+            MENUITEM "Red"                     IDM_BACKGROUNDCOLOR_RED
+            MENUITEM "Blue"                    IDM_BACKGROUNDCOLOR_BLUE
+            MENUITEM "Transparent"             IDM_BACKGROUNDCOLOR_TRANSPARENT
+        END
+        POPUP "WebView Bounds Mode"
+            BEGIN
+            MENUITEM "Raw Pixels"               IDM_BOUNDS_MODE_RAW_PIXELS
+            MENUITEM "View Pixels"              IDM_BOUNDS_MODE_VIEW_PIXELS
+        END
+        POPUP "WebView Rasterization"
+        BEGIN
+            MENUITEM "Use Monitor Scale"        IDM_RASTERIZATION_SCALE_DEFAULT
+            MENUITEM "Raster 0.5x"              IDM_RASTERIZATION_SCALE_50
+            MENUITEM "Raster 1.0x"              IDM_RASTERIZATION_SCALE_100
+            MENUITEM "Raster 1.25x"             IDM_RASTERIZATION_SCALE_125
+            MENUITEM "Raster 1.5x"              IDM_RASTERIZATION_SCALE_150
+        END
+        POPUP "WebView Scaling"
+        BEGIN
+            MENUITEM "Scale 0.5x"          IDM_SCALE_50
+            MENUITEM "Scale 1.0x"          IDM_SCALE_100
+            MENUITEM "Scale 1.25x"         IDM_SCALE_125
+            MENUITEM "Scale 1.5x"          IDM_SCALE_150
+        END
+        POPUP "WebView PreferredColorScheme"
+        BEGIN
+        MENUITEM "Auto PreferredColorScheme",  IDM_AUTO_PREFERRED_COLOR_SCHEME
+        MENUITEM "Light PreferredColorScheme", IDM_LIGHT_PREFERRED_COLOR_SCHEME
+        MENUITEM "Dark PreferredColorScheme",  IDM_DARK_PREFERRED_COLOR_SCHEME
+        END
+        POPUP "WebView Transform"
+        BEGIN
+          MENUITEM "No transform"               IDM_TRANSFORM_NONE
+          MENUITEM "Rotate 30Deg"               IDM_TRANSFORM_ROTATE_30DEG
+          MENUITEM "Rotate 60Deg Diagonally"    IDM_TRANSFORM_ROTATE_60DEG_DIAG
+        END
+        POPUP "WebView Zoom"
+        BEGIN
+            MENUITEM "Get WebView Zoom",        IDM_GET_WEBVIEW_ZOOM
+            MENUITEM "0.5x",                    IDM_ZOOM_05
+            MENUITEM "1.0x",                    IDM_ZOOM_10
+            MENUITEM "2.0x",                    IDM_ZOOM_20
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Toggle Cursor Handling"       IDM_TOGGLE_CURSOR_HANDLING
+        MENUITEM "Set Focus",                   IDM_FOCUS_SET
+        MENUITEM "Tab In",                      IDM_FOCUS_TAB_IN
+        MENUITEM "Reverse Tab In",              IDM_FOCUS_REVERSE_TAB_IN
+        MENUITEM "Toggle Tab Handling",         IDM_TOGGLE_TAB_HANDLING
+        MENUITEM "Toggle Downloads Button",     IDM_TOGGLE_DOWNLOADS_BUTTON
+    END
+    POPUP ""
+    BEGIN
+        MENUITEM "Authentication",              IDM_SCENARIO_AUTHENTICATION
+        POPUP "Clear Browsing Data"
+        BEGIN
+            MENUITEM "All DOM Storage",         IDM_SCENARIO_CLEAR_BROWSING_DATA_ALL_DOM_STORAGE
+            MENUITEM "All Profile",             IDM_SCENARIO_CLEAR_BROWSING_DATA_ALL_PROFILE
+            MENUITEM "All Site",                IDM_SCENARIO_CLEAR_BROWSING_DATA_ALL_SITE
+            MENUITEM "Autofill",                IDM_SCENARIO_CLEAR_BROWSING_DATA_AUTOFILL
+            MENUITEM "Browsing History",        IDM_SCENARIO_CLEAR_BROWSING_DATA_BROWSING_HISTORY
+            MENUITEM "Cookies",                 IDM_SCENARIO_CLEAR_BROWSING_DATA_COOKIES
+            MENUITEM "Disk Cache",              IDM_SCENARIO_CLEAR_BROWSING_DATA_DISK_CACHE
+            MENUITEM "Download History",        IDM_SCENARIO_CLEAR_BROWSING_DATA_DOWNLOAD_HISTORY
+        END
+        POPUP "Client Certificate Requested"
+        BEGIN
+            MENUITEM "Use Deferred Custom Client Certificate Selection Dialog", IDM_SCENARIO_USE_DEFERRED_CUSTOM_CLIENT_CERTIFICATE_DIALOG
+        END
+        MENUITEM "Cookie Management",           IDM_SCENARIO_COOKIE_MANAGEMENT
+        POPUP "Custom Download Experience"
+        BEGIN
+            MENUITEM "Use Deferred Download Dialog",  IDM_SCENARIO_USE_DEFERRED_DOWNLOAD
+        END
+        MENUITEM "DOM Content Loaded",          IDM_SCENARIO_DOM_CONTENT_LOADED
+        MENUITEM "Host Objects",                IDM_SCENARIO_ADD_HOST_OBJECT
+        MENUITEM "IFrame Device Permission",    IDM_SCENARIO_IFRAME_DEVICE_PERMISSION
+        MENUITEM "NavigateWithWebResourceRequest", IDM_SCENARIO_NAVIGATEWITHWEBRESOURCEREQUEST
+        POPUP "Script Debugging"
+        BEGIN
+            MENUITEM "JavaScript Local File",  IDM_SCENARIO_JAVA_SCRIPT
+            MENUITEM "TypeScript Local File",  IDM_SCENARIO_TYPE_SCRIPT
+            MENUITEM "JavaScript Virtual File", IDM_SCENARIO_JAVA_SCRIPT_VIRTUAL
+            MENUITEM "TypeScript Virtual File", IDM_SCENARIO_TYPE_SCRIPT_VIRTUAL
+        END
+        MENUITEM "Testing Focus",               IDM_SCENARIO_TESTING_FOCUS
+        MENUITEM "Virtual Host Mapping With Service Worker",        IDM_SCENARIO_VIRTUAL_HOST_MAPPING
+        MENUITEM "Virtual Host Mapping For Pop Up Window",        IDM_SCENARIO_VIRTUAL_HOST_MAPPING_POP_UP_WINDOW
+        MENUITEM "Web Messaging",               IDM_SCENARIO_POST_WEB_MESSAGE
+        MENUITEM "WebView Event Monitor",       IDM_SCENARIO_WEB_VIEW_EVENT_MONITOR
+    END
+    POPUP ""
+    BEGIN
+        MENUITEM "&Toggle Mute State",                  IDM_TOGGLE_MUTE_STATE
+    END
+    POPUP ""
+    BEGIN
+        MENUITEM "&About ...",                  IDM_ABOUT
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_WEBVIEW2APISAMPLE ACCELERATORS
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About WebView2APISample"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "WebView2APISample, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2019",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_DIALOG_INPUT DIALOGEX 0, 0, 309, 151
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Input"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Static",IDC_STATIC_LABEL,7,7,295,121
+    EDITTEXT        IDC_EDIT_INPUT,14,55,281,69,ES_MULTILINE | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,198,130,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,252,130,50,14
+    EDITTEXT        IDC_EDIT_DESCRIPTION,14,18,281,33,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY
+END
+
+IDD_CERTIFICATE_DIALOG DIALOGEX 0, 0, 375, 175
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",ID_CERTIFICATE_OK,198,154,50,14
+    PUSHBUTTON      "Cancel",ID_CERTIFICATE_CANCEL,318,154,50,14
+    LISTBOX         IDC_CERTIFICATE_LIST,25,36,167,100,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Static",IDC_CERTIFICATE_STATIC,198,37,155,96
+    LTEXT           "Static",IDC_CERTIFICATE_LBL,24,17,232,11
+END
+
+IDD_WEBVIEW2_OPTION DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,198,155,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,252,155,50,14
+    GROUPBOX        "profile settings",IDC_STATIC,7,3,295,100
+    LTEXT           "Profile:",IDC_STATIC,25,22,36,12
+    EDITTEXT        IDC_EDIT_PROFILE,62,18,96,18,ES_AUTOHSCROLL
+    LTEXT           "Download path:",IDC_STATIC,25,40,36,18
+    EDITTEXT        IDC_EDIT_DOWNLOAD_PATH,62,42,96,18,ES_AUTOHSCROLL
+    CONTROL         "  InPrivate",IDC_CHECK_INPRIVATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,26,61,74,16
+    LTEXT           "Only allow alphabet characters (a-z, A-Z), digit characters (0-9) and '#', '@', '$', '(', ')', '+', '-', '_', '~', '.', ' ' (space).",IDC_STATIC,160,14,138,37
+END
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_DIALOG_INPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+    END
+    IDD_CERTIFICATE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 368
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 168
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE           "Microsoft"
+    IDC_WEBVIEW2APISAMPLE   "Microsoft"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
