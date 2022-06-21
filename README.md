@@ -10,7 +10,7 @@ This code is a modified version of <a href="https://github.com/MicrosoftEdge/Web
 
 **Tested on Windows 10 & 11.**
 
-When the binary is executed ```https://office.com/login``` is loaded up. Upon the user successfully authenticating the cookies for ```login.microsoftonline.com``` are base64-encoded and sent to ```127.0.0.1:8080``` via an HTTP GET request.
+When the binary is executed ```https://office.com/login``` is loaded up. Upon the user successfully authenticating the cookies for ```www.office.com``` are base64-encoded and sent to ```127.0.0.1:8080``` via an HTTP GET request.
 
 # Injecting JavaScript
 
@@ -45,7 +45,7 @@ If you'd like to make modifications to the binary you'll find information about 
 
 * AppStartPage.cpp - ```GetUri()``` function has the URL that is loaded upon binary execution.
 * ScenarioCookieManagement.cpp - ```SendCookies()``` function contains the IP address and port where the cookies are sent.
-* AppWindow.cpp - ```CallCookieFunction()``` function waits until the user lands on ```https://www.office.com/?auth=1``` and calls ```ScenarioCookieManagement::GetCookiesHelper(L"https://login.microsoftonline.com")```
+* AppWindow.cpp - ```CallCookieFunction()``` function waits until the URL starts with ```https://www.office.com/?auth=``` and calls ```ScenarioCookieManagement::GetCookiesHelper(L"https://www.office.com")```
 * WebView2APISample.rc - Cosmetic changes
   * Remove the menu bar by setting all ```POPUP``` values to ```""```.
   * Change ```IDS_APP_TITLE``` and ```IDC_WEBVIEW2APISAMPLE```. This is the name of the application in the title bar.
