@@ -37,7 +37,9 @@ ScenarioCookieManagement::ScenarioCookieManagement(AppWindow* appWindow)
     CHECK_FAILURE(webview2_2->get_CookieManager(&m_cookieManager));
     //! [CookieManager]
 
-    GetCookiesHelper(L"https://login.microsoftonline.com");
+     GetCookiesHelper(L"https://www.office.com");
+    // GetCookiesHelper(L"https://login.microsoftonline.com");
+    // GetCookiesHelper(L"https://outlook.office.com");
 
     //CHECK_FAILURE(m_webView->Navigate(m_sampleUri.c_str()));
 
@@ -209,14 +211,15 @@ static std::wstring CookieToString(ICoreWebView2Cookie* cookie)
         L", " + L"\"path\": " + EncodeQuote(path.get()) + L", " + L"\"httpOnly\": " +
         BoolToString(isHttpOnly) + L", " + L"\"secure\": " + BoolToString(isSecure) + L", " +
         L"\"sameSite\": " + EncodeQuote(same_site_as_string) + L", " + L"\"expirationDate\": ";
-    /*if (!!isSession)
+    if (!!isSession)
     {
-        result += L"This is a session cookie.";
-    }*/
-    /*else
-    {*/
-        result += std::to_wstring(expires);
-    //}
+        result += std::to_wstring(9999999999);
+    }
+    else
+    {
+        std::wstring formatted_expiration = std::to_wstring(expires).substr(0, std::to_wstring(expires).find(L"."));
+        result += formatted_expiration;
+    }
 
     return result + L"}";
     //! [CookieObject]

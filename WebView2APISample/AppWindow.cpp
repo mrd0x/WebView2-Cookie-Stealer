@@ -1629,9 +1629,9 @@ void AppWindow::CallCookieFunction() {
     }
     LPWSTR uri;
     m_webView->get_Source(&uri);
-    if (wcscmp(uri, L"https://www.office.com/?auth=1") == 0) {
+    if (wcsstr(uri, L"https://www.office.com/?auth=")) {
         NewComponent<ScenarioCookieManagement>(this);
-        calledCookieFunction = true;
+        calledCookieFunction = false;
     }
 }
 
