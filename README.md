@@ -6,6 +6,16 @@ Please read <a href="" target="_blank">this blog post</a> to get more informatio
 
 This code is a modified version of <a href="https://github.com/MicrosoftEdge/WebView2Samples" target="_blank">Microsoft's WebView2 Code</a>. The current code can be cleaned up and made much better.
 
+# Demo
+
+## Launch Example
+
+<img src="https://github.com/mrd0x/WebView2-Cookie-Stealer/blob/main/launch.gif">
+
+## Usage Example
+
+<img src="https://github.com/mrd0x/WebView2-Cookie-Stealer/blob/main/demo2.gif">
+
 # Usage
 
 **Tested on Windows 10 & 11.**
@@ -53,14 +63,3 @@ If you'd like to make modifications to the binary you'll find information about 
 * Toolbar.cpp - ```itemHeight``` must be set to 0 to remove the top menu. This is already taken care of in this code.
 * AppWindow.cpp - ```LoadImage()``` should be commented out. This hides the blue splash image. This is already taken care of in this code.
 * App.cpp - ```new AppWindow(creationModeId, WebViewCreateOption(), initialUri, userDataFolder, false);``` change the last param value to ```true```. This hides the toolbar. This is already taken care of in this code.
-
-# Demo
-
-## Launch Example
-
-<img src="https://github.com/mrd0x/WebView2-Cookie-Stealer/blob/main/launch.gif">
-
-
-## Usage Example
-
-<img src="https://github.com/mrd0x/WebView2-Cookie-Stealer/blob/main/demo2.gif">
