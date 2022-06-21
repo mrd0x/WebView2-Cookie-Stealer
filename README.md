@@ -1,6 +1,6 @@
 # Blog Post
 
-Please read <a href="" target="_blank">this blog post</a> to get more information.
+Please read <a href="https://mrd0x.com/attacking-with-webview2-applications/" target="_blank">this blog post</a> to get more information.
 
 # Source Code
 
