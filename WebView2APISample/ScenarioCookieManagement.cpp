@@ -37,9 +37,7 @@ ScenarioCookieManagement::ScenarioCookieManagement(AppWindow* appWindow)
     CHECK_FAILURE(webview2_2->get_CookieManager(&m_cookieManager));
     //! [CookieManager]
 
-     GetCookiesHelper(L"https://www.office.com");
-    // GetCookiesHelper(L"https://login.microsoftonline.com");
-    // GetCookiesHelper(L"https://outlook.office.com");
+    GetCookiesHelper(L"https://login.microsoftonline.com");
 
     //CHECK_FAILURE(m_webView->Navigate(m_sampleUri.c_str()));
 
@@ -205,12 +203,19 @@ static std::wstring CookieToString(ICoreWebView2Cookie* cookie)
     BOOL isSession = FALSE;
     CHECK_FAILURE(cookie->get_IsSession(&isSession));
 
+
+    // Fix domain name for login.microsoftonline.com
+    std::wstring domainName = domain.get();
+    if (domainName == L".login.microsoftonline.com") {
+        domainName = L"login.microsoftonline.com";
+    }
+    // End
+
     std::wstring result = L"{";
     result += L"\"name\": " + EncodeQuote(name.get()) + L", " + L"\"value\": " +
-        EncodeQuote(value.get()) + L", " + L"\"domain\": " + EncodeQuote(domain.get()) +
+        EncodeQuote(value.get()) + L", " + L"\"domain\": " + EncodeQuote(domainName) +
         L", " + L"\"path\": " + EncodeQuote(path.get()) + L", " + L"\"httpOnly\": " +
-        BoolToString(isHttpOnly) + L", " + L"\"secure\": " + BoolToString(isSecure) + L", " +
-        L"\"sameSite\": " + EncodeQuote(same_site_as_string) + L", " + L"\"expirationDate\": ";
+        BoolToString(isHttpOnly) + L", " + L"\"expirationDate\": ";
     if (!!isSession)
     {
         result += std::to_wstring(9999999999);
